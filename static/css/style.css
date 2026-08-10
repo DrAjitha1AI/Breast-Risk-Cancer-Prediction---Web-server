@@ -1,11 +1,11 @@
 /* =========================================================
    BREAST CANCER RISK PREDICTION
-   Main Application Styles
+   MAIN APPLICATION STYLE
    ========================================================= */
 
 
 /* =========================================================
-   1. GLOBAL RESET
+   GLOBAL RESET
    ========================================================= */
 
 * {
@@ -14,265 +14,210 @@
     padding: 0;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(
-        135deg,
-        #fff7fb 0%,
-        #fdebf4 50%,
-        #fff7fb 100%
-    );
-    color: #17243a;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f7 0%,
+            #fde8f1 50%,
+            #fff4f8 100%
+        );
+
+    color: #18253a;
     min-height: 100vh;
     line-height: 1.5;
 }
 
 
 /* =========================================================
-   2. MAIN PAGE WRAPPER
+   MAIN PAGE WRAPPER
    ========================================================= */
 
 .page-wrapper {
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: flex-start;
 
-    padding: 45px 20px;
+    padding: 50px 20px 60px;
 }
 
 
 /* =========================================================
-   3. MAIN CARD
+   MAIN CARD
    ========================================================= */
 
-.form-card,
+.main-card,
 .result-card {
     width: 100%;
-    max-width: 650px;
+    max-width: 620px;
 
     background: #ffffff;
 
-    border-radius: 22px;
+    border-radius: 28px;
 
-    padding: 38px 42px;
+    padding: 40px 46px 34px;
 
     box-shadow:
-        0 15px 45px rgba(201, 57, 117, 0.12),
-        0 3px 12px rgba(23, 36, 58, 0.05);
+        0 20px 55px rgba(31, 42, 68, 0.10),
+        0 5px 18px rgba(31, 42, 68, 0.05);
 
-    border: 1px solid rgba(229, 42, 104, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 
 /* =========================================================
-   4. HEADER
+   HEADER / AWARENESS SECTION
    ========================================================= */
 
 .page-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
+.header-ribbon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-/* Pink ribbon / medical icon */
+    margin-bottom: 18px;
+}
 
-.header-icon {
+.header-ribbon img {
     width: 78px;
     height: 78px;
 
-    margin: 0 auto 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #e91e63;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 10px 25px rgba(233, 30, 99, 0.20);
-}
-
-
-.header-icon img {
-    width: 48px;
-    height: 48px;
-
     object-fit: contain;
 }
 
-
-/* If ribbon is directly inside header */
-
-.page-header img {
-    max-width: 70px;
-    max-height: 70px;
-    object-fit: contain;
-}
-
-
-.page-header h1 {
-    color: #16263f;
-
-    font-size: 30px;
+.awareness-label {
+    font-size: 11px;
     font-weight: 700;
 
-    line-height: 1.25;
+    letter-spacing: 1.8px;
+
+    color: #e91e63;
 
     margin-bottom: 8px;
 }
 
+.page-header h1 {
+    font-size: 30px;
+    line-height: 1.2;
 
-.page-header .subtitle {
-    color: #e91e63;
+    font-weight: 750;
 
-    font-size: 15px;
-    font-weight: 600;
+    color: #14233a;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
+.page-header .subtitle {
+    font-size: 15px;
+    line-height: 1.65;
 
-.page-header p {
-    color: #64748b;
-
-    font-size: 14px;
+    color: #65748a;
 
     max-width: 500px;
 
     margin: 0 auto;
-
-    line-height: 1.6;
 }
 
 
 /* =========================================================
-   5. RESEARCH / INFORMATION NOTE
+   INFORMATION / RESEARCH NOTE
    ========================================================= */
 
-.research-note,
 .info-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-
     background: #fff4f8;
 
-    border-left: 4px solid #e91e63;
+    border-left: 4px solid #ed1760;
 
     border-radius: 12px;
 
-    padding: 16px 18px;
+    padding: 15px 17px;
 
     margin-bottom: 28px;
 }
 
-
-.research-note-icon,
-.info-icon {
-    width: 30px;
-    height: 30px;
-
-    min-width: 30px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #e91e63;
-
-    color: white;
-
-    font-size: 15px;
-    font-weight: 700;
-}
-
-
-.research-note strong,
 .info-box strong {
     display: block;
 
-    color: #b51655;
+    color: #b4144e;
 
-    font-size: 15px;
+    font-size: 14px;
 
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
-
-.research-note p,
 .info-box p {
     color: #64748b;
 
     font-size: 13px;
 
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 
 /* =========================================================
-   6. FORM
+   FORM
    ========================================================= */
 
-.prediction-form {
-    width: 100%;
-}
-
-
 .form-group {
-    margin-bottom: 21px;
+    margin-bottom: 22px;
 }
-
 
 .form-group label {
     display: block;
 
-    color: #17243a;
-
     font-size: 14px;
+
     font-weight: 700;
+
+    color: #172a44;
 
     margin-bottom: 8px;
 }
 
 
 /* =========================================================
-   7. INPUTS / SELECTS
+   INPUTS / SELECTS
    ========================================================= */
 
-.form-group select,
-.form-group input[type="number"],
-.form-group input[type="text"],
-.form-group input[type="email"] {
+.form-group input,
+.form-group select {
     width: 100%;
 
-    height: 50px;
+    height: 54px;
 
-    padding: 0 15px;
+    padding: 0 16px;
 
-    border: 1px solid #cbd5e1;
+    border: 1px solid #ccd7e5;
 
     border-radius: 10px;
 
     background: #f8fafc;
 
-    color: #17243a;
+    color: #1f2937;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
 
-    font-size: 14px;
+    font-family: inherit;
 
     outline: none;
 
@@ -282,83 +227,60 @@ body {
         background 0.2s ease;
 }
 
-
-.form-group select {
-    cursor: pointer;
-}
-
-
 .form-group input::placeholder {
     color: #94a3b8;
 }
 
-
-.form-group select:focus,
-.form-group input:focus {
-    border-color: #e91e63;
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #ed1760;
 
     background: #ffffff;
 
     box-shadow:
-        0 0 0 3px rgba(233, 30, 99, 0.10);
+        0 0 0 3px rgba(237, 23, 96, 0.10);
 }
 
 
 /* =========================================================
-   8. SMALL FIELD HELP TEXT
+   HELPER TEXT
    ========================================================= */
 
 .form-help {
     display: block;
 
-    margin-top: 5px;
-
-    color: #94a3b8;
+    margin-top: 6px;
 
     font-size: 12px;
-}
 
-
-/*
-   This is specifically for:
-
-   Example: 24.5
-*/
-
-.example-text {
-    display: block;
-
-    margin-top: 5px;
-
-    color: #94a3b8;
-
-    font-size: 12px;
+    color: #91a0b6;
 }
 
 
 /* =========================================================
-   9. PREDICT BUTTON
+   PREDICT BUTTON
    ========================================================= */
 
 .predict-button,
 button[type="submit"] {
     width: 100%;
 
-    height: 54px;
+    height: 56px;
 
     border: none;
 
     border-radius: 10px;
 
-    background: linear-gradient(
-        135deg,
-        #e91e63,
-        #d81b60
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #e91e63,
+            #ed155f
+        );
 
     color: #ffffff;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: inherit;
 
     font-size: 15px;
 
@@ -366,26 +288,23 @@ button[type="submit"] {
 
     cursor: pointer;
 
+    margin-top: 5px;
+
     box-shadow:
-        0 8px 20px rgba(233, 30, 99, 0.20);
+        0 10px 22px rgba(233, 30, 99, 0.18);
 
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease,
-        opacity 0.2s ease;
-
-    margin-top: 8px;
+        box-shadow 0.2s ease;
 }
-
 
 .predict-button:hover,
 button[type="submit"]:hover {
     transform: translateY(-1px);
 
     box-shadow:
-        0 10px 25px rgba(233, 30, 99, 0.28);
+        0 13px 26px rgba(233, 30, 99, 0.23);
 }
-
 
 .predict-button:active,
 button[type="submit"]:active {
@@ -393,67 +312,75 @@ button[type="submit"]:active {
 }
 
 
-.predict-button:disabled,
-button[type="submit"]:disabled {
-    opacity: 0.65;
-
-    cursor: not-allowed;
-
-    transform: none;
-}
-
-
 /* =========================================================
-   10. ABOUT THIS PREDICTION
+   ABOUT THIS PREDICTION
    ========================================================= */
 
 .about-prediction {
     margin-top: 24px;
 
-    padding: 16px 18px;
+    background: #fff4f8;
 
-    background: #fff5f9;
+    border-left: 4px solid #ed1760;
 
-    border-left: 4px solid #e91e63;
+    border-radius: 12px;
 
-    border-radius: 10px;
+    padding: 15px 17px;
 }
 
-
-.about-prediction h3 {
-    color: #b51655;
-
+.about-prediction h2 {
     font-size: 14px;
+
+    color: #b4144e;
 
     margin-bottom: 6px;
 }
 
-
 .about-prediction p {
-    color: #64748b;
-
     font-size: 12px;
 
-    line-height: 1.55;
+    line-height: 1.6;
+
+    color: #64748b;
 }
 
 
 /* =========================================================
-   11. FOOTER / MEDICAL INFORMATION
+   BOTTOM MEDICAL / RESEARCH NOTICE
    ========================================================= */
 
-.page-footer {
-    margin-top: 25px;
-
+.medical-notice {
     text-align: center;
 
-    color: #94a3b8;
+    margin-top: 24px;
 
+    padding: 0 5px;
+}
+
+.medical-notice p {
     font-size: 11px;
 
     line-height: 1.6;
+
+    color: #94a3b8;
 }
 
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.page-footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #9aa7b8;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
 
 .page-footer .footer-line {
     width: 100%;
@@ -462,286 +389,196 @@ button[type="submit"]:disabled {
 
     background: #edf0f4;
 
-    margin-bottom: 14px;
-}
-
-
-.page-footer p {
-    margin-bottom: 3px;
+    margin-bottom: 15px;
 }
 
 
 /* =========================================================
-   12. RESULT PAGE
+   RESULT PAGE
    ========================================================= */
 
 .result-page {
     align-items: flex-start;
 }
 
-
 .result-card {
     text-align: center;
-
-    max-width: 650px;
 }
 
 
 /* =========================================================
-   13. RESULT RIBBON
+   RESULT RIBBON
    ========================================================= */
 
 .result-ribbon {
-    margin-bottom: 12px;
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 16px;
 }
 
-
 .result-ribbon img {
-    width: 58px;
-    height: 58px;
+    width: 70px;
+
+    height: 70px;
 
     object-fit: contain;
 }
 
 
 /* =========================================================
-   14. RESULT ICON
+   RESULT ICON
    ========================================================= */
 
-/*
-   The previous design displayed an exclamation mark.
-
-   We keep the area subtle and small.
-   The actual risk level communicates the result.
-*/
-
 .risk-icon {
-    width: 54px;
-    height: 54px;
+    width: 70px;
 
-    margin: 0 auto 14px;
+    height: 70px;
+
+    margin: 0 auto 18px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
 
-    background: #fff0f5;
+    background: #fff0f3;
 
-    color: #e91e63;
-
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 32px;
 }
 
 
-/*
-   If risk.icon contains "!" the styling will still be
-   visually small rather than a large warning symbol.
-*/
-
-
 /* =========================================================
-   15. RESULT LABEL
+   RESULT LABEL
    ========================================================= */
 
 .result-label {
-    color: #64748b;
-
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: 700;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.7px;
+
+    color: #64748b;
 
     margin-bottom: 5px;
 }
 
 
+/* =========================================================
+   RISK LEVEL
+   ========================================================= */
+
 .risk-level {
-    font-size: 48px;
+    font-size: 50px;
 
     line-height: 1.1;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    margin-bottom: 25px;
+    margin-bottom: 28px;
+
+    color: #dc2626;
 }
 
 
 /* =========================================================
-   16. RISK LEVEL COLORS
-   ========================================================= */
-
-.risk-high .risk-level {
-    color: #d62828;
-}
-
-
-.risk-low .risk-level {
-    color: #16834a;
-}
-
-
-.risk-medium .risk-level {
-    color: #c77b00;
-}
-
-
-/* Risk icon */
-
-.risk-high .risk-icon {
-    background: #fff0f0;
-    color: #d62828;
-}
-
-
-.risk-low .risk-icon {
-    background: #ecfdf3;
-    color: #16834a;
-}
-
-
-.risk-medium .risk-icon {
-    background: #fff8e8;
-    color: #c77b00;
-}
-
-
-/* =========================================================
-   17. RESULT SUMMARY
+   RESULT SUMMARY
    ========================================================= */
 
 .result-summary {
-    display: grid;
+    display: flex;
 
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
 
     gap: 12px;
 
-    margin-bottom: 18px;
+    margin-bottom: 24px;
 }
-
 
 .summary-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 20px;
+
     background: #f8fafc;
 
-    border: 1px solid #eef2f6;
-
-    border-radius: 10px;
-
-    padding: 15px 12px;
-}
-
-
-.summary-item span {
-    display: block;
-
-    color: #64748b;
-
-    font-size: 12px;
-
-    margin-bottom: 3px;
-}
-
-
-.summary-item strong {
-    display: block;
-
-    color: #17243a;
-
-    font-size: 16px;
-}
-
-
-/* =========================================================
-   18. RISK MESSAGE
-   ========================================================= */
-
-.risk-message {
-    padding: 16px 18px;
-
-    border-radius: 10px;
-
-    margin-bottom: 24px;
+    border-radius: 14px;
 
     text-align: left;
 }
 
+.summary-item span {
+    font-size: 15px;
+
+    color: #65748a;
+}
+
+.summary-item strong {
+    font-size: 17px;
+
+    color: #263448;
+}
+
+
+/* =========================================================
+   RISK MESSAGE
+   ========================================================= */
+
+.risk-message {
+    background: #fff4f4;
+
+    border-radius: 14px;
+
+    padding: 18px 20px;
+
+    margin-bottom: 24px;
+
+    color: #8f2b2b;
+}
 
 .risk-message strong {
     display: block;
 
     font-size: 14px;
 
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
-
 
 .risk-message p {
-    font-size: 13px;
+    font-size: 14px;
 
-    line-height: 1.55;
-}
-
-
-/* High */
-
-.risk-high .risk-message {
-    background: #fff2f2;
-
-    border-left: 4px solid #d62828;
-
-    color: #8f2020;
-}
-
-
-/* Low */
-
-.risk-low .risk-message {
-    background: #effaf4;
-
-    border-left: 4px solid #16834a;
-
-    color: #166534;
-}
-
-
-/* Medium */
-
-.risk-medium .risk-message {
-    background: #fff8e8;
-
-    border-left: 4px solid #c77b00;
-
-    color: #8a5a00;
+    line-height: 1.6;
 }
 
 
 /* =========================================================
-   19. INPUT SUMMARY
+   INPUT SUMMARY
    ========================================================= */
 
 .input-summary {
+    margin-top: 10px;
+
+    margin-bottom: 26px;
+
     text-align: left;
-
-    margin-top: 20px;
-
-    margin-bottom: 24px;
-
-    padding-top: 5px;
 }
-
 
 .input-summary h2 {
     font-size: 17px;
 
-    color: #17243a;
+    color: #1b2b43;
 
     margin-bottom: 12px;
 }
-
 
 .input-row {
     display: flex;
@@ -750,345 +587,200 @@ button[type="submit"]:disabled {
 
     align-items: center;
 
-    gap: 20px;
-
-    padding: 11px 0;
+    padding: 12px 0;
 
     border-bottom: 1px solid #edf0f4;
 }
 
-
-.input-row:last-child {
-    border-bottom: none;
-}
-
-
 .input-row span {
-    color: #64748b;
-
     font-size: 13px;
-}
 
+    color: #64748b;
+}
 
 .input-row strong {
-    color: #17243a;
-
     font-size: 13px;
 
-    text-align: right;
+    color: #1f2937;
 }
 
 
 /* =========================================================
-   20. ANOTHER PREDICTION BUTTON
+   ANOTHER PREDICTION BUTTON
    ========================================================= */
 
 .another-prediction {
-    display: inline-flex;
+    display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     width: 100%;
 
-    min-height: 50px;
+    min-height: 54px;
 
-    padding: 12px 18px;
+    padding: 14px 20px;
 
-    background: #17243a;
+    border-radius: 12px;
+
+    background: #1f2a3d;
 
     color: #ffffff;
 
     text-decoration: none;
 
-    border-radius: 10px;
-
-    font-size: 14px;
+    font-size: 15px;
 
     font-weight: 700;
+
+    margin-top: 8px;
 
     transition:
         background 0.2s ease,
         transform 0.2s ease;
 }
 
-
 .another-prediction:hover {
-    background: #263854;
+    background: #162033;
 
     transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   21. RESULT DISCLAIMER
+   RESULT DISCLAIMER
    ========================================================= */
 
 .result-disclaimer {
-    margin-top: 20px;
-
-    padding: 14px 16px;
+    margin-top: 24px;
 
     text-align: center;
-
-    background: #fafafa;
-
-    border-radius: 10px;
 
     color: #94a3b8;
 }
 
-
 .result-disclaimer strong {
-    display: none;
-}
+    display: block;
 
+    font-size: 12px;
+
+    margin-bottom: 5px;
+
+    color: #7c899b;
+}
 
 .result-disclaimer p {
     font-size: 11px;
 
-    line-height: 1.55;
-
-    margin: 0;
+    line-height: 1.65;
 }
 
 
 /* =========================================================
-   22. RESULT FOOTER
+   RISK COLOURS
    ========================================================= */
 
-.result-page .page-footer {
-    margin-top: 22px;
+.risk-high .risk-level {
+    color: #dc2626;
+}
+
+.risk-medium .risk-level {
+    color: #d97706;
+}
+
+.risk-low .risk-level {
+    color: #16803c;
 }
 
 
 /* =========================================================
-   23. ERROR / VALIDATION
-   ========================================================= */
-
-.error-message {
-    color: #c62828;
-
-    font-size: 12px;
-
-    margin-top: 5px;
-}
-
-
-.form-group input:invalid:focus {
-    border-color: #e91e63;
-}
-
-
-/* =========================================================
-   24. RESPONSIVE - TABLET
+   MOBILE RESPONSIVE
    ========================================================= */
 
 @media (max-width: 700px) {
 
     .page-wrapper {
-        padding: 25px 14px;
+        padding: 25px 12px 40px;
     }
 
-
-    .form-card,
+    .main-card,
     .result-card {
-        padding: 30px 25px;
+        max-width: 100%;
 
-        border-radius: 18px;
+        padding: 30px 22px 28px;
+
+        border-radius: 22px;
     }
-
 
     .page-header h1 {
-        font-size: 26px;
+        font-size: 25px;
     }
-
-
-    .risk-level {
-        font-size: 42px;
-    }
-
-}
-
-
-/* =========================================================
-   25. RESPONSIVE - MOBILE
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-    body {
-        background: #fff7fb;
-    }
-
-
-    .page-wrapper {
-        padding: 15px 10px;
-    }
-
-
-    .form-card,
-    .result-card {
-        padding: 25px 18px;
-
-        border-radius: 16px;
-
-        box-shadow:
-            0 8px 25px rgba(201, 57, 117, 0.10);
-    }
-
-
-    .header-icon {
-        width: 65px;
-        height: 65px;
-
-        border-radius: 17px;
-    }
-
-
-    .header-icon img {
-        width: 40px;
-        height: 40px;
-    }
-
-
-    .page-header h1 {
-        font-size: 23px;
-    }
-
 
     .page-header .subtitle {
         font-size: 14px;
     }
 
-
-    .page-header p {
-        font-size: 13px;
+    .header-ribbon img {
+        width: 68px;
+        height: 68px;
     }
-
 
     .form-group {
-        margin-bottom: 18px;
+        margin-bottom: 19px;
     }
 
-
-    .form-group label {
-        font-size: 13px;
-    }
-
-
-    .form-group select,
-    .form-group input[type="number"],
-    .form-group input[type="text"],
-    .form-group input[type="email"] {
-        height: 48px;
+    .form-group input,
+    .form-group select {
+        height: 52px;
 
         font-size: 14px;
     }
 
-
-    .research-note,
-    .info-box {
-        padding: 13px 14px;
+    .predict-button,
+    button[type="submit"] {
+        height: 54px;
     }
 
-
-    .research-note p,
-    .info-box p {
-        font-size: 12px;
+    .risk-level {
+        font-size: 44px;
     }
 
-
-    .result-ribbon img {
-        width: 50px;
-        height: 50px;
+    .summary-item {
+        padding: 16px;
     }
 
+    .another-prediction {
+        font-size: 14px;
+    }
+}
 
-    .risk-icon {
-        width: 48px;
-        height: 48px;
 
-        font-size: 19px;
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .page-wrapper {
+        padding: 15px 8px 30px;
     }
 
-
-    .result-label {
-        font-size: 12px;
+    .main-card,
+    .result-card {
+        padding: 25px 17px;
+        border-radius: 19px;
     }
 
+    .page-header h1 {
+        font-size: 22px;
+    }
+
+    .page-header .subtitle {
+        font-size: 13px;
+    }
 
     .risk-level {
         font-size: 40px;
-
-        margin-bottom: 20px;
     }
-
-
-    .result-summary {
-        gap: 8px;
-    }
-
-
-    .summary-item {
-        padding: 12px 8px;
-    }
-
-
-    .summary-item span {
-        font-size: 11px;
-    }
-
-
-    .summary-item strong {
-        font-size: 14px;
-    }
-
-
-    .input-row {
-        padding: 10px 0;
-    }
-
-
-    .input-row span,
-    .input-row strong {
-        font-size: 12px;
-    }
-
-
-    .another-prediction {
-        min-height: 48px;
-
-        font-size: 13px;
-    }
-
-
-    .result-disclaimer p {
-        font-size: 10px;
-    }
-
-
-    .page-footer {
-        font-size: 10px;
-    }
-
 }
-
-
-/* =========================================================
-   26. ACCESSIBILITY
-   ========================================================= */
-
-button:focus-visible,
-a:focus-visible,
-select:focus-visible,
-input:focus-visible {
-    outline: 3px solid rgba(233, 30, 99, 0.25);
-
-    outline-offset: 2px;
-}
-
-
-/* =========================================================
-   END
-   ========================================================= */
