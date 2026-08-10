@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Risk Assessment Result
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="page-wrapper result-page">
+
+        <section
+            class="result-card risk-{{ risk.class }}"
+        >
+
+            <!-- Medical ribbon -->
+            <div class="result-ribbon">
+
+                <img
+                    src="{{ url_for(
+                        'static',
+                        filename='images/breast-cancer-ribbon.svg'
+                    ) }}"
+                    alt="Breast cancer awareness ribbon"
+                >
+
+            </div>
+
+
+            <!-- Result icon -->
+            <div class="risk-icon">
+
+                {{ risk.icon }}
+
+            </div>
+
+
+            <!-- Result heading -->
+            <p class="result-label">
+                PREDICTED BREAST CANCER RISK LEVEL
+            </p>
+
+            <h1 class="risk-level">
+                {{ risk.level }}
+            </h1>
+
+
+            <!-- Summary -->
+            <div class="result-summary">
+
+                <div class="summary-item">
+
+                    <span>
+                        BMI
+                    </span>
+
+                    <strong>
+                        {{ "%.1f"|format(user_data.get("BMI", 0)) }}
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-item">
+
+                    <span>
+                        Model Prediction
+                    </span>
+
+                    <strong>
+                        {% if prediction is not none %}
+                            {{ prediction }}
+                        {% else %}
+                            —
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Risk explanation -->
+            <div class="risk-message">
+
+                <strong>
+                    Risk Assessment
+                </strong>
+
+                <p>
+                    {{ risk.message }}
+                </p>
+
+            </div>
+
+
+            <!-- Input summary -->
+            {% if user_data %}
+
+            <div class="input-summary">
+
+                <h2>
+                    Assessment Information
+                </h2>
+
+
+                <div class="input-row">
+
+                    <span>
+                        Family History
+                    </span>
+
+                    <strong>
+                        {% if user_data["Family_History"] == 1 %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+
+                <div class="input-row">
+
+                    <span>
+                        High Fat Diet
+                    </span>
+
+                    <strong>
+                        {% if user_data["High_Fat_Diet"] == 1 %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+
+                <div class="input-row">
+
+                    <span>
+                        Current Smoker
+                    </span>
+
+                    <strong>
+                        {% if user_data["Smoking"] == 1 %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+
+                <div class="input-row">
+
+                    <span>
+                        Alcohol Consumption
+                    </span>
+
+                    <strong>
+                        {% if user_data["Alcohol"] == 1 %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+
+                <div class="input-row">
+
+                    <span>
+                        Hormonal Replacement Therapy
+                    </span>
+
+                    <strong>
+                        {% if user_data["HRT_Usage"] == 1 %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+
+                <div class="input-row">
+
+                    <span>
+                        Late Menopause
+                    </span>
+
+                    <strong>
+                        {% if user_data["Late_Menopause"] == 1 %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+
+                <div class="input-row">
+
+                    <span>
+                        Late or No Pregnancy
+                    </span>
+
+                    <strong>
+                        {% if user_data["No_or_Late_Pregnancy"] == 1 %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+
+                <div class="input-row">
+
+                    <span>
+                        Breastfed Children
+                    </span>
+
+                    <strong>
+                        {% if user_data["Breastfed"] == 1 %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+
+                <div class="input-row">
+
+                    <span>
+                        Estrogen-Based Cosmetics
+                    </span>
+
+                    <strong>
+                        {% if user_data["Estrogen_Cosmetics"] == 1 %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- Action -->
+            <a
+                href="{{ url_for('home') }}"
+                class="another-prediction"
+            >
+                ← Make Another Prediction
+            </a>
+
+
+            <!-- Medical disclaimer -->
+            <div class="result-disclaimer">
+
+                <strong>
+                    Important Notice
+                </strong>
+
+                <p>
+                    This prediction is generated by a machine
+                    learning model for educational and research
+                    purposes. It is not a diagnosis and should
+                    not replace evaluation by a qualified
+                    healthcare professional.
+                </p>
+
+            </div>
+
+
+            <footer class="page-footer">
+
+                <div class="footer-line"></div>
+
+                <p>
+                    Breast Cancer Risk Prediction Research Project
+                </p>
+
+                <p>
+                    Machine Learning • Health Informatics •
+                    Data Science
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='Js/script.js') }}"
+    ></script>
+
+</body>
+
+</html>

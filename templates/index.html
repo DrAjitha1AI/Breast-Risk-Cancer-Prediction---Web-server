@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Breast Cancer Risk Prediction
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <main class="page-wrapper">
+
+        <section class="assessment-card">
+
+            <!-- Header -->
+            <header class="medical-header">
+
+                <div class="ribbon-container">
+                    <img
+                        src="{{ url_for(
+                            'static',
+                            filename='images/breast-cancer-ribbon.svg'
+                        ) }}"
+                        alt="Breast cancer awareness ribbon"
+                        class="ribbon-image"
+                    >
+                </div>
+
+                <div class="header-label">
+                    BREAST CANCER AWARENESS
+                </div>
+
+                <h1>
+                    Breast Cancer Risk Prediction
+                </h1>
+
+                <p class="subtitle">
+                    Machine Learning–Based Risk Assessment
+                </p>
+
+                <p class="intro-text">
+                    Enter the requested information below to
+                    estimate the breast cancer risk category
+                    using the trained machine learning model.
+                </p>
+
+            </header>
+
+
+            <!-- Research notice -->
+            <div class="research-notice">
+
+                <span class="notice-icon">i</span>
+
+                <div>
+                    <strong>
+                        Medical Research & Educational Tool
+                    </strong>
+
+                    <p>
+                        This application is intended for
+                        educational and research purposes and
+                        does not provide a medical diagnosis.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Form -->
+            <form
+                action="{{ url_for('predict') }}"
+                method="POST"
+                id="riskForm"
+                novalidate
+            >
+
+                <!-- Family History -->
+                <div class="form-group">
+
+                    <label for="Family_History">
+                        Family History of Breast Cancer
+                    </label>
+
+                    <select
+                        id="Family_History"
+                        name="Family_History"
+                        required
+                    >
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Yes
+                        </option>
+
+                        <option value="0">
+                            No
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- BMI -->
+                <div class="form-group">
+
+                    <label for="BMI">
+                        Body Mass Index (BMI)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="BMI"
+                        name="BMI"
+                        placeholder="Enter BMI"
+                        min="10"
+                        max="80"
+                        step="0.1"
+                        required
+                    >
+
+                    <small>
+                        Example: 22.7
+                    </small>
+
+                </div>
+
+
+                <!-- High Fat Diet -->
+                <div class="form-group">
+
+                    <label for="High_Fat_Diet">
+                        High Fat Diet
+                    </label>
+
+                    <select
+                        id="High_Fat_Diet"
+                        name="High_Fat_Diet"
+                        required
+                    >
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Yes
+                        </option>
+
+                        <option value="0">
+                            No
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- Smoking -->
+                <div class="form-group">
+
+                    <label for="Smoking">
+                        Current Smoker
+                    </label>
+
+                    <select
+                        id="Smoking"
+                        name="Smoking"
+                        required
+                    >
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Yes
+                        </option>
+
+                        <option value="0">
+                            No
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- Alcohol -->
+                <div class="form-group">
+
+                    <label for="Alcohol">
+                        Frequent Alcohol Consumption
+                    </label>
+
+                    <select
+                        id="Alcohol"
+                        name="Alcohol"
+                        required
+                    >
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Yes
+                        </option>
+
+                        <option value="0">
+                            No
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- HRT -->
+                <div class="form-group">
+
+                    <label for="HRT_Usage">
+                        Hormonal Replacement Therapy Usage
+                    </label>
+
+                    <select
+                        id="HRT_Usage"
+                        name="HRT_Usage"
+                        required
+                    >
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Yes
+                        </option>
+
+                        <option value="0">
+                            No
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- Late Menopause -->
+                <div class="form-group">
+
+                    <label for="Late_Menopause">
+                        Late Menopause
+                    </label>
+
+                    <select
+                        id="Late_Menopause"
+                        name="Late_Menopause"
+                        required
+                    >
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Yes
+                        </option>
+
+                        <option value="0">
+                            No
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- Pregnancy -->
+                <div class="form-group">
+
+                    <label for="No_or_Late_Pregnancy">
+                        Late or No Pregnancy
+                    </label>
+
+                    <select
+                        id="No_or_Late_Pregnancy"
+                        name="No_or_Late_Pregnancy"
+                        required
+                    >
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Yes
+                        </option>
+
+                        <option value="0">
+                            No
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- Breastfeeding -->
+                <div class="form-group">
+
+                    <label for="Breastfed">
+                        Breastfed Children
+                    </label>
+
+                    <select
+                        id="Breastfed"
+                        name="Breastfed"
+                        required
+                    >
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Yes
+                        </option>
+
+                        <option value="0">
+                            No
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- Estrogen cosmetics -->
+                <div class="form-group">
+
+                    <label for="Estrogen_Cosmetics">
+                        Use of Estrogen-Based Cosmetics
+                    </label>
+
+                    <select
+                        id="Estrogen_Cosmetics"
+                        name="Estrogen_Cosmetics"
+                        required
+                    >
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Yes
+                        </option>
+
+                        <option value="0">
+                            No
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="predict-button"
+                    id="predictButton"
+                >
+                    <span>
+                        Predict Risk Level
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+                </button>
+
+            </form>
+
+
+            <!-- Footer -->
+            <footer class="page-footer">
+
+                <div class="footer-line"></div>
+
+                <p>
+                    Breast Cancer Risk Prediction Research Project
+                </p>
+
+                <p>
+                    Machine Learning • Health Informatics •
+                    Data Science
+                </p>
+
+                <p class="disclaimer">
+                    This tool is for educational and research
+                    purposes only and is not a substitute for
+                    professional medical advice, diagnosis, or
+                    treatment.
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='Js/script.js') }}"
+    ></script>
+
+</body>
+
+</html>
