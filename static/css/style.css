@@ -1,5 +1,478 @@
 /* =========================================================
-   RESULT PAGE
+   BREAST CANCER RISK PREDICTION
+   Main Application Styles
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #fff7fb 0%,
+        #fdebf4 50%,
+        #fff7fb 100%
+    );
+    color: #17243a;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   2. MAIN PAGE WRAPPER
+   ========================================================= */
+
+.page-wrapper {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 45px 20px;
+}
+
+
+/* =========================================================
+   3. MAIN CARD
+   ========================================================= */
+
+.form-card,
+.result-card {
+    width: 100%;
+    max-width: 650px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 38px 42px;
+
+    box-shadow:
+        0 15px 45px rgba(201, 57, 117, 0.12),
+        0 3px 12px rgba(23, 36, 58, 0.05);
+
+    border: 1px solid rgba(229, 42, 104, 0.08);
+}
+
+
+/* =========================================================
+   4. HEADER
+   ========================================================= */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* Pink ribbon / medical icon */
+
+.header-icon {
+    width: 78px;
+    height: 78px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e91e63;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 25px rgba(233, 30, 99, 0.20);
+}
+
+
+.header-icon img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+}
+
+
+/* If ribbon is directly inside header */
+
+.page-header img {
+    max-width: 70px;
+    max-height: 70px;
+    object-fit: contain;
+}
+
+
+.page-header h1 {
+    color: #16263f;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    margin-bottom: 8px;
+}
+
+
+.page-header .subtitle {
+    color: #e91e63;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+
+.page-header p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   5. RESEARCH / INFORMATION NOTE
+   ========================================================= */
+
+.research-note,
+.info-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    background: #fff4f8;
+
+    border-left: 4px solid #e91e63;
+
+    border-radius: 12px;
+
+    padding: 16px 18px;
+
+    margin-bottom: 28px;
+}
+
+
+.research-note-icon,
+.info-icon {
+    width: 30px;
+    height: 30px;
+
+    min-width: 30px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e91e63;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.research-note strong,
+.info-box strong {
+    display: block;
+
+    color: #b51655;
+
+    font-size: 15px;
+
+    margin-bottom: 3px;
+}
+
+
+.research-note p,
+.info-box p {
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   6. FORM
+   ========================================================= */
+
+.prediction-form {
+    width: 100%;
+}
+
+
+.form-group {
+    margin-bottom: 21px;
+}
+
+
+.form-group label {
+    display: block;
+
+    color: #17243a;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   7. INPUTS / SELECTS
+   ========================================================= */
+
+.form-group select,
+.form-group input[type="number"],
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    color: #17243a;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+
+.form-group select:focus,
+.form-group input:focus {
+    border-color: #e91e63;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(233, 30, 99, 0.10);
+}
+
+
+/* =========================================================
+   8. SMALL FIELD HELP TEXT
+   ========================================================= */
+
+.form-help {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/*
+   This is specifically for:
+
+   Example: 24.5
+*/
+
+.example-text {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   9. PREDICT BUTTON
+   ========================================================= */
+
+.predict-button,
+button[type="submit"] {
+    width: 100%;
+
+    height: 54px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #e91e63,
+        #d81b60
+    );
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(233, 30, 99, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+
+    margin-top: 8px;
+}
+
+
+.predict-button:hover,
+button[type="submit"]:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 25px rgba(233, 30, 99, 0.28);
+}
+
+
+.predict-button:active,
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+
+.predict-button:disabled,
+button[type="submit"]:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   10. ABOUT THIS PREDICTION
+   ========================================================= */
+
+.about-prediction {
+    margin-top: 24px;
+
+    padding: 16px 18px;
+
+    background: #fff5f9;
+
+    border-left: 4px solid #e91e63;
+
+    border-radius: 10px;
+}
+
+
+.about-prediction h3 {
+    color: #b51655;
+
+    font-size: 14px;
+
+    margin-bottom: 6px;
+}
+
+
+.about-prediction p {
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   11. FOOTER / MEDICAL INFORMATION
+   ========================================================= */
+
+.page-footer {
+    margin-top: 25px;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.page-footer .footer-line {
+    width: 100%;
+
+    height: 1px;
+
+    background: #edf0f4;
+
+    margin-bottom: 14px;
+}
+
+
+.page-footer p {
+    margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   12. RESULT PAGE
    ========================================================= */
 
 .result-page {
@@ -9,179 +482,279 @@
 
 .result-card {
     text-align: center;
-    max-width: 760px;
+
+    max-width: 650px;
 }
 
 
-/* ---------- Result ribbon ---------- */
+/* =========================================================
+   13. RESULT RIBBON
+   ========================================================= */
+
+.result-ribbon {
+    margin-bottom: 12px;
+}
+
 
 .result-ribbon img {
-    width: 55px;
-    height: 55px;
+    width: 58px;
+    height: 58px;
+
     object-fit: contain;
-    margin-bottom: 8px;
 }
 
 
-/* ---------- Result label ---------- */
+/* =========================================================
+   14. RESULT ICON
+   ========================================================= */
+
+/*
+   The previous design displayed an exclamation mark.
+
+   We keep the area subtle and small.
+   The actual risk level communicates the result.
+*/
+
+.risk-icon {
+    width: 54px;
+    height: 54px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0f5;
+
+    color: #e91e63;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+/*
+   If risk.icon contains "!" the styling will still be
+   visually small rather than a large warning symbol.
+*/
+
+
+/* =========================================================
+   15. RESULT LABEL
+   ========================================================= */
 
 .result-label {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
     color: #64748b;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
     margin-bottom: 5px;
 }
 
 
-/* ---------- Risk level ---------- */
-
 .risk-level {
     font-size: 48px;
+
     line-height: 1.1;
+
+    font-weight: 700;
+
     margin-bottom: 25px;
 }
 
 
 /* =========================================================
-   LOW RISK
-   ========================================================= */
-
-.risk-low .risk-level {
-    color: #15803d;
-}
-
-
-.risk-low .risk-message {
-    background: #f0fdf4;
-    border-color: #bbf7d0;
-    color: #166534;
-}
-
-
-/* =========================================================
-   MODERATE RISK
-   ========================================================= */
-
-.risk-moderate .risk-level {
-    color: #b45309;
-}
-
-
-.risk-moderate .risk-message {
-    background: #fffbeb;
-    border-color: #fde68a;
-    color: #92400e;
-}
-
-
-/* =========================================================
-   HIGH RISK
+   16. RISK LEVEL COLORS
    ========================================================= */
 
 .risk-high .risk-level {
-    color: #dc2626;
+    color: #d62828;
 }
 
 
-.risk-high .risk-message {
-    background: #fff1f2;
-    border-color: #fecaca;
-    color: #991b1b;
+.risk-low .risk-level {
+    color: #16834a;
+}
+
+
+.risk-medium .risk-level {
+    color: #c77b00;
+}
+
+
+/* Risk icon */
+
+.risk-high .risk-icon {
+    background: #fff0f0;
+    color: #d62828;
+}
+
+
+.risk-low .risk-icon {
+    background: #ecfdf3;
+    color: #16834a;
+}
+
+
+.risk-medium .risk-icon {
+    background: #fff8e8;
+    color: #c77b00;
 }
 
 
 /* =========================================================
-   ERROR / UNKNOWN
+   17. RESULT SUMMARY
    ========================================================= */
-
-.risk-error .risk-level,
-.risk-unknown .risk-level {
-    color: #dc2626;
-}
-
-
-/* ---------- Result summary ---------- */
 
 .result-summary {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-bottom: 20px;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
 }
 
 
 .summary-item {
-    padding: 16px;
     background: #f8fafc;
-    border: 1px solid #e2e8f0;
+
+    border: 1px solid #eef2f6;
+
     border-radius: 10px;
+
+    padding: 15px 12px;
 }
 
 
 .summary-item span {
     display: block;
+
     color: #64748b;
+
     font-size: 12px;
-    margin-bottom: 4px;
+
+    margin-bottom: 3px;
 }
 
 
 .summary-item strong {
-    color: #1e293b;
-    font-size: 17px;
+    display: block;
+
+    color: #17243a;
+
+    font-size: 16px;
 }
 
 
-/* ---------- Risk message ---------- */
+/* =========================================================
+   18. RISK MESSAGE
+   ========================================================= */
 
 .risk-message {
-    padding: 19px;
-    border: 1px solid;
-    border-radius: 12px;
+    padding: 16px 18px;
+
+    border-radius: 10px;
+
     margin-bottom: 24px;
+
+    text-align: left;
 }
 
 
 .risk-message strong {
     display: block;
-    margin-bottom: 4px;
+
     font-size: 14px;
+
+    margin-bottom: 4px;
 }
 
 
 .risk-message p {
     font-size: 13px;
+
+    line-height: 1.55;
 }
 
 
-/* ---------- Input summary ---------- */
+/* High */
+
+.risk-high .risk-message {
+    background: #fff2f2;
+
+    border-left: 4px solid #d62828;
+
+    color: #8f2020;
+}
+
+
+/* Low */
+
+.risk-low .risk-message {
+    background: #effaf4;
+
+    border-left: 4px solid #16834a;
+
+    color: #166534;
+}
+
+
+/* Medium */
+
+.risk-medium .risk-message {
+    background: #fff8e8;
+
+    border-left: 4px solid #c77b00;
+
+    color: #8a5a00;
+}
+
+
+/* =========================================================
+   19. INPUT SUMMARY
+   ========================================================= */
 
 .input-summary {
     text-align: left;
-    margin-top: 25px;
-    padding: 20px;
-    background: #f8fafc;
-    border-radius: 13px;
-    border: 1px solid #e2e8f0;
+
+    margin-top: 20px;
+
+    margin-bottom: 24px;
+
+    padding-top: 5px;
 }
 
 
 .input-summary h2 {
-    color: #172554;
     font-size: 17px;
+
+    color: #17243a;
+
     margin-bottom: 12px;
 }
 
 
 .input-row {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 20px;
-    padding: 10px 0;
-    border-bottom: 1px solid #e2e8f0;
-    font-size: 13px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #edf0f4;
 }
 
 
@@ -192,29 +765,48 @@
 
 .input-row span {
     color: #64748b;
+
+    font-size: 13px;
 }
 
 
 .input-row strong {
-    color: #1e293b;
+    color: #17243a;
+
+    font-size: 13px;
+
+    text-align: right;
 }
 
 
-/* ---------- Another prediction ---------- */
+/* =========================================================
+   20. ANOTHER PREDICTION BUTTON
+   ========================================================= */
 
 .another-prediction {
     display: inline-flex;
-    justify-content: center;
+
     align-items: center;
+    justify-content: center;
+
     width: 100%;
-    min-height: 51px;
-    margin-top: 25px;
-    border-radius: 9px;
-    background: #172033;
-    color: white;
+
+    min-height: 50px;
+
+    padding: 12px 18px;
+
+    background: #17243a;
+
+    color: #ffffff;
+
     text-decoration: none;
+
+    border-radius: 10px;
+
     font-size: 14px;
+
     font-weight: 700;
+
     transition:
         background 0.2s ease,
         transform 0.2s ease;
@@ -222,51 +814,93 @@
 
 
 .another-prediction:hover {
-    background: #273449;
+    background: #263854;
+
     transform: translateY(-1px);
 }
 
 
-/* ---------- Result disclaimer ---------- */
+/* =========================================================
+   21. RESULT DISCLAIMER
+   ========================================================= */
 
 .result-disclaimer {
-    margin-top: 22px;
-    padding: 17px;
-    background: #f8fafc;
+    margin-top: 20px;
+
+    padding: 14px 16px;
+
+    text-align: center;
+
+    background: #fafafa;
+
     border-radius: 10px;
-    color: #64748b;
-    font-size: 11px;
+
+    color: #94a3b8;
 }
 
 
 .result-disclaimer strong {
-    display: block;
-    color: #475569;
-    margin-bottom: 4px;
-    font-size: 12px;
+    display: none;
+}
+
+
+.result-disclaimer p {
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    margin: 0;
 }
 
 
 /* =========================================================
-   RESPONSIVE DESIGN
+   22. RESULT FOOTER
    ========================================================= */
 
-@media (max-width: 600px) {
+.result-page .page-footer {
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   23. ERROR / VALIDATION
+   ========================================================= */
+
+.error-message {
+    color: #c62828;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+.form-group input:invalid:focus {
+    border-color: #e91e63;
+}
+
+
+/* =========================================================
+   24. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
 
     .page-wrapper {
-        padding: 20px 12px;
+        padding: 25px 14px;
     }
 
 
-    .assessment-card,
+    .form-card,
     .result-card {
-        padding: 25px 18px;
+        padding: 30px 25px;
+
         border-radius: 18px;
     }
 
 
-    .medical-header h1 {
-        font-size: 25px;
+    .page-header h1 {
+        font-size: 26px;
     }
 
 
@@ -274,16 +908,187 @@
         font-size: 42px;
     }
 
+}
+
+
+/* =========================================================
+   25. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        background: #fff7fb;
+    }
+
+
+    .page-wrapper {
+        padding: 15px 10px;
+    }
+
+
+    .form-card,
+    .result-card {
+        padding: 25px 18px;
+
+        border-radius: 16px;
+
+        box-shadow:
+            0 8px 25px rgba(201, 57, 117, 0.10);
+    }
+
+
+    .header-icon {
+        width: 65px;
+        height: 65px;
+
+        border-radius: 17px;
+    }
+
+
+    .header-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .page-header h1 {
+        font-size: 23px;
+    }
+
+
+    .page-header .subtitle {
+        font-size: 14px;
+    }
+
+
+    .page-header p {
+        font-size: 13px;
+    }
+
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+
+    .form-group select,
+    .form-group input[type="number"],
+    .form-group input[type="text"],
+    .form-group input[type="email"] {
+        height: 48px;
+
+        font-size: 14px;
+    }
+
+
+    .research-note,
+    .info-box {
+        padding: 13px 14px;
+    }
+
+
+    .research-note p,
+    .info-box p {
+        font-size: 12px;
+    }
+
+
+    .result-ribbon img {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .risk-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 19px;
+    }
+
+
+    .result-label {
+        font-size: 12px;
+    }
+
+
+    .risk-level {
+        font-size: 40px;
+
+        margin-bottom: 20px;
+    }
+
 
     .result-summary {
-        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+
+    .summary-item {
+        padding: 12px 8px;
+    }
+
+
+    .summary-item span {
+        font-size: 11px;
+    }
+
+
+    .summary-item strong {
+        font-size: 14px;
     }
 
 
     .input-row {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 3px;
+        padding: 10px 0;
+    }
+
+
+    .input-row span,
+    .input-row strong {
+        font-size: 12px;
+    }
+
+
+    .another-prediction {
+        min-height: 48px;
+
+        font-size: 13px;
+    }
+
+
+    .result-disclaimer p {
+        font-size: 10px;
+    }
+
+
+    .page-footer {
+        font-size: 10px;
     }
 
 }
+
+
+/* =========================================================
+   26. ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible {
+    outline: 3px solid rgba(233, 30, 99, 0.25);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   END
+   ========================================================= */
