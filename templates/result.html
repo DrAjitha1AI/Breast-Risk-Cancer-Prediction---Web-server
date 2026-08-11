@@ -30,9 +30,7 @@
             class="result-card risk-{{ risk.class }}"
         >
 
-
-            <!-- Breast Cancer Ribbon -->
-
+            <!-- Medical ribbon -->
             <div class="result-ribbon">
 
                 <img
@@ -46,24 +44,26 @@
             </div>
 
 
+            <!-- Result icon -->
+            <div class="risk-icon">
 
-            <!-- Result -->
+                {{ risk.icon }}
 
+            </div>
+
+
+            <!-- Result heading -->
             <p class="result-label">
-                BREAST CANCER RISK ASSESSMENT
+                PREDICTED BREAST CANCER RISK LEVEL
             </p>
-
 
             <h1 class="risk-level">
                 {{ risk.level }}
             </h1>
 
 
-
             <!-- Summary -->
-
             <div class="result-summary">
-
 
                 <div class="summary-item">
 
@@ -78,7 +78,6 @@
                 </div>
 
 
-
                 <div class="summary-item">
 
                     <span>
@@ -86,32 +85,23 @@
                     </span>
 
                     <strong>
-
                         {% if prediction is not none %}
-
                             {{ prediction }}
-
                         {% else %}
-
                             —
-
                         {% endif %}
-
                     </strong>
 
                 </div>
 
-
             </div>
 
 
-
-            <!-- Risk Explanation -->
-
+            <!-- Risk explanation -->
             <div class="risk-message">
 
                 <strong>
-                    Prediction
+                    Risk Assessment
                 </strong>
 
                 <p>
@@ -121,9 +111,7 @@
             </div>
 
 
-
-            <!-- Assessment Information -->
-
+            <!-- Input summary -->
             {% if user_data %}
 
             <div class="input-summary">
@@ -133,7 +121,6 @@
                 </h2>
 
 
-
                 <div class="input-row">
 
                     <span>
@@ -141,37 +128,31 @@
                     </span>
 
                     <strong>
-
                         {% if user_data["Family_History"] == 1 %}
                             Yes
                         {% else %}
                             No
                         {% endif %}
-
                     </strong>
 
                 </div>
-
 
 
                 <div class="input-row">
 
                     <span>
-                        High-Fat Diet
+                        High Fat Diet
                     </span>
 
                     <strong>
-
                         {% if user_data["High_Fat_Diet"] == 1 %}
                             Yes
                         {% else %}
                             No
                         {% endif %}
-
                     </strong>
 
                 </div>
-
 
 
                 <div class="input-row">
@@ -181,17 +162,14 @@
                     </span>
 
                     <strong>
-
                         {% if user_data["Smoking"] == 1 %}
                             Yes
                         {% else %}
                             No
                         {% endif %}
-
                     </strong>
 
                 </div>
-
 
 
                 <div class="input-row">
@@ -201,17 +179,14 @@
                     </span>
 
                     <strong>
-
                         {% if user_data["Alcohol"] == 1 %}
                             Yes
                         {% else %}
                             No
                         {% endif %}
-
                     </strong>
 
                 </div>
-
 
 
                 <div class="input-row">
@@ -221,17 +196,14 @@
                     </span>
 
                     <strong>
-
                         {% if user_data["HRT_Usage"] == 1 %}
                             Yes
                         {% else %}
                             No
                         {% endif %}
-
                     </strong>
 
                 </div>
-
 
 
                 <div class="input-row">
@@ -241,17 +213,14 @@
                     </span>
 
                     <strong>
-
                         {% if user_data["Late_Menopause"] == 1 %}
                             Yes
                         {% else %}
                             No
                         {% endif %}
-
                     </strong>
 
                 </div>
-
 
 
                 <div class="input-row">
@@ -261,17 +230,14 @@
                     </span>
 
                     <strong>
-
                         {% if user_data["No_or_Late_Pregnancy"] == 1 %}
                             Yes
                         {% else %}
                             No
                         {% endif %}
-
                     </strong>
 
                 </div>
-
 
 
                 <div class="input-row">
@@ -281,17 +247,14 @@
                     </span>
 
                     <strong>
-
                         {% if user_data["Breastfed"] == 1 %}
                             Yes
                         {% else %}
                             No
                         {% endif %}
-
                     </strong>
 
                 </div>
-
 
 
                 <div class="input-row">
@@ -301,26 +264,21 @@
                     </span>
 
                     <strong>
-
                         {% if user_data["Estrogen_Cosmetics"] == 1 %}
                             Yes
                         {% else %}
                             No
                         {% endif %}
-
                     </strong>
 
                 </div>
-
 
             </div>
 
             {% endif %}
 
 
-
-            <!-- Another Prediction -->
-
+            <!-- Action -->
             <a
                 href="{{ url_for('home') }}"
                 class="another-prediction"
@@ -329,26 +287,21 @@
             </a>
 
 
-
-            <!-- Bottom Medical Information -->
-
+            <!-- Medical disclaimer -->
             <div class="result-disclaimer">
 
                 <strong>
-                    ⚕ Research Note
+                    Important Notice
                 </strong>
 
                 <p>
-                    Dataset age profile: 82 years.
-                    This result is for educational and research
-                    purposes only and is not a medical diagnosis.
+                    This prediction is generated by a trained machine
+                    learning model for educational and research
+                    purposes and is not a medical diagnosis.
                 </p>
 
             </div>
 
-
-
-            <!-- Footer -->
 
             <footer class="page-footer">
 
@@ -358,24 +311,21 @@
                     Breast Cancer Risk Prediction Research Project
                 </p>
 
-                <p class="disclaimer">
+                <p>
                     Machine Learning • Health Informatics •
                     Data Science
                 </p>
 
             </footer>
 
-
         </section>
 
     </main>
 
 
-
     <script
         src="{{ url_for('static', filename='Js/script.js') }}"
     ></script>
-
 
 </body>
 

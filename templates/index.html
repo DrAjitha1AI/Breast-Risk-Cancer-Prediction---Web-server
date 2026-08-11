@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -18,9 +17,7 @@
         rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}"
     >
-
 </head>
-
 
 <body>
 
@@ -28,13 +25,10 @@
 
         <section class="assessment-card">
 
-
             <!-- Header -->
-
             <header class="medical-header">
 
                 <div class="ribbon-container">
-
                     <img
                         src="{{ url_for(
                             'static',
@@ -43,36 +37,45 @@
                         alt="Breast cancer awareness ribbon"
                         class="ribbon-image"
                     >
-
                 </div>
-
 
                 <div class="header-label">
                     BREAST CANCER AWARENESS
                 </div>
 
-
                 <h1>
                     Breast Cancer Risk Prediction
                 </h1>
 
-
-                <p class="subtitle">
-                    Machine Learning Risk Assessment
-                </p>
-
-
                 <p class="intro-text">
-                    Enter the required information to estimate
-                    a breast cancer risk category.
+                    Enter the requested information below to
+                    estimate the breast cancer risk category.
                 </p>
 
             </header>
 
 
+            <!-- Research notice -->
+            <div class="research-notice">
 
-            <!-- Assessment Form -->
+                <span class="notice-icon">i</span>
 
+                <div>
+                    <strong>
+                        Research note: Dataset age profile - 82 years
+                    </strong>
+
+                    <p>
+                        This application is intended for
+                        educational and research purposes and
+                        does not provide a medical diagnosis.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Form -->
             <form
                 action="{{ url_for('predict') }}"
                 method="POST"
@@ -80,9 +83,7 @@
                 novalidate
             >
 
-
                 <!-- Family History -->
-
                 <div class="form-group">
 
                     <label for="Family_History">
@@ -94,7 +95,6 @@
                         name="Family_History"
                         required
                     >
-
                         <option value="">
                             Select an option
                         </option>
@@ -106,15 +106,12 @@
                         <option value="0">
                             No
                         </option>
-
                     </select>
 
                 </div>
 
 
-
                 <!-- BMI -->
-
                 <div class="form-group">
 
                     <label for="BMI">
@@ -133,19 +130,17 @@
                     >
 
                     <small>
-                        Example: 24.5
+                        Example: 25.5
                     </small>
 
                 </div>
 
 
-
-                <!-- High-Fat Diet -->
-
+                <!-- High Fat Diet -->
                 <div class="form-group">
 
                     <label for="High_Fat_Diet">
-                        High-Fat Diet
+                        High Fat Diet
                     </label>
 
                     <select
@@ -153,7 +148,6 @@
                         name="High_Fat_Diet"
                         required
                     >
-
                         <option value="">
                             Select an option
                         </option>
@@ -165,15 +159,12 @@
                         <option value="0">
                             No
                         </option>
-
                     </select>
 
                 </div>
 
 
-
                 <!-- Smoking -->
-
                 <div class="form-group">
 
                     <label for="Smoking">
@@ -185,7 +176,6 @@
                         name="Smoking"
                         required
                     >
-
                         <option value="">
                             Select an option
                         </option>
@@ -197,15 +187,12 @@
                         <option value="0">
                             No
                         </option>
-
                     </select>
 
                 </div>
 
 
-
                 <!-- Alcohol -->
-
                 <div class="form-group">
 
                     <label for="Alcohol">
@@ -217,7 +204,6 @@
                         name="Alcohol"
                         required
                     >
-
                         <option value="">
                             Select an option
                         </option>
@@ -229,15 +215,12 @@
                         <option value="0">
                             No
                         </option>
-
                     </select>
 
                 </div>
 
 
-
                 <!-- HRT -->
-
                 <div class="form-group">
 
                     <label for="HRT_Usage">
@@ -249,7 +232,6 @@
                         name="HRT_Usage"
                         required
                     >
-
                         <option value="">
                             Select an option
                         </option>
@@ -261,15 +243,12 @@
                         <option value="0">
                             No
                         </option>
-
                     </select>
 
                 </div>
 
 
-
                 <!-- Late Menopause -->
-
                 <div class="form-group">
 
                     <label for="Late_Menopause">
@@ -281,7 +260,6 @@
                         name="Late_Menopause"
                         required
                     >
-
                         <option value="">
                             Select an option
                         </option>
@@ -293,15 +271,12 @@
                         <option value="0">
                             No
                         </option>
-
                     </select>
 
                 </div>
 
 
-
                 <!-- Pregnancy -->
-
                 <div class="form-group">
 
                     <label for="No_or_Late_Pregnancy">
@@ -313,7 +288,6 @@
                         name="No_or_Late_Pregnancy"
                         required
                     >
-
                         <option value="">
                             Select an option
                         </option>
@@ -325,15 +299,12 @@
                         <option value="0">
                             No
                         </option>
-
                     </select>
 
                 </div>
 
 
-
                 <!-- Breastfeeding -->
-
                 <div class="form-group">
 
                     <label for="Breastfed">
@@ -345,7 +316,6 @@
                         name="Breastfed"
                         required
                     >
-
                         <option value="">
                             Select an option
                         </option>
@@ -357,15 +327,12 @@
                         <option value="0">
                             No
                         </option>
-
                     </select>
 
                 </div>
 
 
-
-                <!-- Estrogen Cosmetics -->
-
+                <!-- Estrogen cosmetics -->
                 <div class="form-group">
 
                     <label for="Estrogen_Cosmetics">
@@ -377,7 +344,6 @@
                         name="Estrogen_Cosmetics"
                         required
                     >
-
                         <option value="">
                             Select an option
                         </option>
@@ -389,21 +355,17 @@
                         <option value="0">
                             No
                         </option>
-
                     </select>
 
                 </div>
 
 
-
                 <!-- Submit -->
-
                 <button
                     type="submit"
                     class="predict-button"
                     id="predictButton"
                 >
-
                     <span>
                         Predict Risk Level
                     </span>
@@ -411,41 +373,35 @@
                     <span class="button-arrow">
                         →
                     </span>
-
                 </button>
 
             </form>
 
 
-
-            <!-- Bottom Information -->
-
+            <!-- Footer -->
             <footer class="page-footer">
 
                 <div class="footer-line"></div>
 
                 <p>
-                    ⚕ Research note: Dataset age profile — 82 years.
+                    Breast Cancer Risk Prediction Research Project
                 </p>
 
-                <p class="disclaimer">
-                    For educational and research purposes only.
-                    Not a medical diagnosis.
+                <p>
+                    Machine Learning • Health Informatics •
+                    Data Science
                 </p>
 
             </footer>
-
 
         </section>
 
     </main>
 
 
-
     <script
         src="{{ url_for('static', filename='Js/script.js') }}"
     ></script>
-
 
 </body>
 
